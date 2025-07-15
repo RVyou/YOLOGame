@@ -50,7 +50,7 @@ impl MouseAndKeyboardInstruct {
             m.insert(k.to_string(), b);
         }
         unsafe {
-            let lib = libloading::Library::new("./dd43390.dll").unwrap();
+            let lib = libloading::Library::new("./extra/dd43390.dll").unwrap();
             let func2: libloading::Symbol<unsafe extern fn(i32) -> i32> = lib.get(b"DD_btn").unwrap();
             //lib init
             if func2(0) != 1 {
@@ -105,10 +105,10 @@ impl MouseAndKeyboardInstruct {
             //     fn DD_mov(x: c_int, y: c_int); //鼠标绝对移动
             let func: libloading::Symbol<unsafe extern fn(i32, i32)> = self.lib.get(b"DD_mov").unwrap();
             func(x as i32, y as i32);
-            thread::sleep(time::Duration::from_millis(rand::thread_rng().gen_range(100..150)));
+            thread::sleep(time::Duration::from_millis(rand::thread_rng().gen_range(100..1500)));
             let func: libloading::Symbol<unsafe extern fn(i32)> = self.lib.get(b"DD_btn").unwrap();
             func(1);
-            thread::sleep(time::Duration::from_millis(rand::thread_rng().gen_range(100..150)));
+            thread::sleep(time::Duration::from_millis(rand::thread_rng().gen_range(100..1500)));
             func(2);
         }
     }

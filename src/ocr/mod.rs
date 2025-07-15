@@ -3,5 +3,5 @@ pub mod paddle;
 pub use paddle as ocr;
 
 pub trait Ocr {
-    fn ocr(&self, img: &image::DynamicImage) -> Result<String, Box<dyn Error>>;
+    fn ocr(&mut self, img: &image::DynamicImage) ->  Result<Vec<String>, Box<dyn Error>>;
 }
