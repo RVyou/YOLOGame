@@ -13,6 +13,8 @@ rust-paddle-ocr= { path = "packege/rust-paddle-ocr-main" }
 serde = { version = "1.0", features = ["derive"] }
 config = "0.15"
 serde_derive = "1.0.219"
+thiserror = "1.0.61"
+libloading = "0.7.4"
 
 [lib]
 name = "lib"
