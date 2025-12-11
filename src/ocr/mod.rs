@@ -1,7 +1,7 @@
-use std::error::Error;
-pub mod paddle;
-pub use paddle as ocr;
 
-pub trait Ocr {
-    fn ocr(&mut self, img: &image::DynamicImage) ->  Result<Vec<String>, Box<dyn Error>>;
-}
+pub  mod pp;
+
+const REC_MODEL_PATH: &str = "extra/PP-OCRv5_rec_mobile_infer.onnx";
+const DET_MODEL_PATH: &str = "extra/PP-OCRv5_det_mobile_infer.onnx";
+const KEYS: &str = "extra/ppocr_keys_v5.txt";
+

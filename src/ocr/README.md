@@ -1,0 +1,1 @@
+这里代码从这里修改而来 https://github.com/mg-chao/paddle-ocr-rs
